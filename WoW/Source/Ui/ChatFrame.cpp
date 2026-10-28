@@ -5612,6 +5612,11 @@ ChatChannel::ChatChannel() {
     this->m_unkA0 = 1;
 }
 
+// INLINED
+ChatChannel::~ChatChannel() {
+    this->m_pendingUsers.Clear();
+}
+
 // VERIFY: 2c5750ac auto
 // OFFSET: 0x004FB190
 void CGChat::LeaveWorld() {

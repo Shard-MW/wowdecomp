@@ -180,6 +180,7 @@ class ChatChannel {
     /* 00A5 */ uint8_t m_unkA5;
 
     ChatChannel();
+    ~ChatChannel();
 };
 
 struct DisplayChannel {
