@@ -785,6 +785,20 @@ void CGChat::SendIgnoredResponse(WOWGUID guid, uint8_t a2) {
     ClientServices::Send2(&msg);
 }
 
+// INLINED
+PROFANITYCHECK::~PROFANITYCHECK() {
+    if (this->m_filteredText) {
+        SMemFree(this->m_filteredText, __FILE__, __LINE__, 0);
+    }
+}
+
+// INLINED
+SPAMCHECK::~SPAMCHECK() {
+    if (this->m_filteredText) {
+        SMemFree(this->m_filteredText, __FILE__, __LINE__, 0);
+    }
+}
+
 // VERIFY: 7953750b manual
 // OFFSET: 0x005016B0
 THROTTLEDCHAT::~THROTTLEDCHAT() {
